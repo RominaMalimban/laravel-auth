@@ -19,8 +19,9 @@ Route::get('/', [MainController::class,'home'])
     ->name('home');
 
 // LOGGED PRIVATE:
-Route::get('/logged', [MainController::class,'logged'])
-    ->name('logged');
+Route::get('/logged', [MainController :: class, 'logged']) 
+    -> middleware(['auth', 'verified'])-> name('logged');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
