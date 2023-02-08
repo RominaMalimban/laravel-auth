@@ -14,8 +14,13 @@ use App\Http\Controllers\MainController;
 |
 */
 
+// HOME PUBLIC:
 Route::get('/', [MainController::class,'home'])
     ->name('home');
+
+// LOGGED PRIVATE:
+Route::get('/logged', [MainController::class,'logged'])
+    ->name('logged');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
