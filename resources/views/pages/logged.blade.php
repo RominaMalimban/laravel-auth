@@ -2,7 +2,12 @@
 
 @section('content')
     <div class="container">
-        <h1>Elenco progetti</h1>
+        <h1>Repositories</h1>
+
+        <h3>
+            <a href="{{ route('projectCreate') }}">Create a new repository</a>
+        </h3>
+        
 
         @foreach ($projects as $project)
             <div class="card mb-5 p-3">

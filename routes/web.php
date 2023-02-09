@@ -30,6 +30,14 @@ Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
 Route :: get('/logged/project/delete/{project}', [MainController :: class, 'projectDelete'])
     -> name('projectDelete');
 
+// ROUTE PRIVATE PER FORM:
+Route :: get('/logged/project/create', [MainController :: class, 'projectCreate'])
+    -> name('projectCreate');
+
+// ROUTE PER RICEZIONE DATI FORM:
+Route :: post('/logged/project/store', [MainController :: class, 'projectStore'])
+    -> name('projectStore');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
