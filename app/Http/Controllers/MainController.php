@@ -45,17 +45,12 @@ class MainController extends Controller
     public function projectStore(Request $request) {
 
         $data = $request->validate([
-            'name' => 'required|string|max:64|unique:projects, name',
-            'description' => 'nullable|string',
-            'main_image' => 'required|string|unique:projects, main_image',
-            'release_date' => 'required|before:'.now(),
-            'repo_link' => 'required|unique: projects, repo_link'
-        ]
-        // [
-        //     'name.required' => 'Errore required',
-        //     'name.max' => 'Massimo 64 caratteri'
-
-        // ]
+                'name' => 'required|string|max:64|unique:projects,name',
+                'description' => 'nullable|string',
+                'main_image' => 'required|string|unique:projects,main_image',
+                'release_date' => 'required|before:'.now(),
+                'repo_link' => 'required|unique:projects,repo_link'
+            ]
         );
 
     
