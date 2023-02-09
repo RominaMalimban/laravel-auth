@@ -22,7 +22,7 @@
                     <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/logged') }}">{{ __('Logged') }}</a>
+                    <a class="nav-link" href="{{url('/logged') }}">{{ __('Il mio profilo') }}</a>
                 </li>
             </ul>
 
