@@ -28,23 +28,23 @@ Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
 
 // ROUTE PRIVATE DELETE:
 Route :: get('/logged/project/delete/{project}', [MainController :: class, 'projectDelete'])
-    -> name('projectDelete');
+    ->middleware(['auth', 'verified'])-> name('projectDelete');
 
 // ROUTE PRIVATE PER FORM:
 Route :: get('/logged/project/create', [MainController :: class, 'projectCreate'])
-    -> name('projectCreate');
+    ->middleware(['auth', 'verified'])-> name('projectCreate');
 
 // ROUTE PER RICEZIONE DATI FORM:
 Route :: post('/logged/project/store', [MainController :: class, 'projectStore'])
-    -> name('projectStore');
+    ->middleware(['auth', 'verified'])-> name('projectStore');
 
 // ROUTE EDIT FORM:
 Route::get('/logged/project/edit/{project}', [MainController::class, 'projectEdit'])
-    ->name('projectEdit');
+    ->middleware(['auth', 'verified'])->name('projectEdit');
 
 // ROUTE PER RICEZIONE DATI VECCHI DA FORM:
 Route :: post('/logged/project/update/{project}', [MainController :: class, 'projectUpdate'])
-    -> name('projectUpdate');
+    ->middleware(['auth', 'verified'])-> name('projectUpdate');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
