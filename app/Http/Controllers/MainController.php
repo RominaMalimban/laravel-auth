@@ -11,16 +11,28 @@ class MainController extends Controller
 
         $projects = Project::all();
 
-        return view('pages.home', compact('projects'));
+        return view('pages.home',compact('projects'));
     }
 
     // LOGGED PRIVATE:
     public function logged(){
-        return view('pages.logged');
+
+        $projects = Project::all();
+
+        return view('pages.logged',compact('projects'));
     }
 
     // METODO SHOW PUBLIC:
     public function projectShow(Project $project){
         return view('pages.projectShow', compact('project'));
     }
+
+    // METODO DELETE PRIVATE:
+    public function projectDelete(Project $project) {
+
+        $project -> delete();
+    
+        return redirect() -> route('home', 'logged');
+    }
+    
 }

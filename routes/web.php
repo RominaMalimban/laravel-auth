@@ -26,6 +26,10 @@ Route::get('/logged', [MainController :: class, 'logged'])
 Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
     ->name('projectShow');
 
+// ROUTE PRIVATE DELETE:
+Route :: get('/logged/project/delete/{project}', [MainController :: class, 'projectDelete'])
+    -> name('projectDelete');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
