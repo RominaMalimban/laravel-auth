@@ -6,7 +6,9 @@
 
         @foreach ($projects as $project)
             <div class="card mb-5 p-3">
-                <h2>Progetto: {{$project -> name}}</h2>
+                <a href="{{route('projectShow', $project)}}">
+                    <h2>Progetto: {{$project -> name}}</h2>
+                </a>
                 <p>Description: {{$project -> description 
                                 ? $project -> description 
                                 : " no description "}}

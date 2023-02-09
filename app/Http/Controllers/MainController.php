@@ -18,4 +18,9 @@ class MainController extends Controller
     public function logged(){
         return view('pages.logged');
     }
+
+    // METODO SHOW PUBLIC:
+    public function projectShow(Project $project){
+        return view('pages.projectShow', compact('project'));
+    }
 }

@@ -14,14 +14,17 @@ use App\Http\Controllers\MainController;
 |
 */
 
-// HOME PUBLIC:
+// ROUTE HOME PUBLIC:
 Route::get('/', [MainController::class,'home'])
     ->name('home');
 
-// LOGGED PRIVATE:
+// ROUTE LOGGED PRIVATE:
 Route::get('/logged', [MainController :: class, 'logged']) 
     -> middleware(['auth', 'verified'])-> name('logged');
 
+// ROUTE SHOW PUBLIC:
+Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
+    ->name('projectShow');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
