@@ -17,7 +17,7 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            'name'=> fake()->firstName(),
+            'name'=> fake()->words(3, true),
             'description'=> fake() -> boolean() 
                         ? fake() -> paragraph()
                         : '',
