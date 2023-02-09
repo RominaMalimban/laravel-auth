@@ -1,5 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
+@import "@fortawesome/fontawesome-free/css/all.css";
 
+nav{
+    background-color: #272b33;
+
+    a{
+        color: #fff;
+    }
+}
 span{
     display: block;
 }
