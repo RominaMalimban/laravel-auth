@@ -18,7 +18,8 @@
                                 ? $project -> description 
                                 : " no description "}}
                 </p>
-                <span>Link immagine: {{ $project -> main_image}}</span>
+                {{-- <span>Link immagine: {{ $project -> main_image}}</span> --}}
+                <img  src={{ $project -> main_image}} alt="">
                 <span>Release date: {{ $project -> release_date}}</span>
                 <span>Repo link: {{ $project -> repo_link}}</span>
 
