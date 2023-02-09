@@ -1,12 +1,51 @@
 @import '~bootstrap/scss/bootstrap';
 @import "@fortawesome/fontawesome-free/css/all.css";
 
+body{
+    // background-color: #0a0c10;
+    background-image: url(../img/background.webp);
+    background-size: contain;
+    
+}
+
+// REGOLE HEADER:
 nav{
     background-color: #272b33;
+    height: 70px;
 
     a{
         color: #fff;
     }
+}
+
+.ms-home{
+    h2{
+        color: #e13032;
+    }
+
+    .my-cards{
+        display: flex;
+        flex-wrap: wrap;
+        margin-inline: -20px;
+
+        .card{
+            background-color: #272b33e1;
+            border: 1px solid #fff;
+            width: calc(100% / 2 - 40px);
+            margin-inline: 20px;
+
+            .my-description{
+                font-style: italic;
+                padding-inline: 15px;
+            }
+        }
+
+        p, span{
+            color: #fff;
+        }
+    }
+
+    
 }
 span{
     display: block;

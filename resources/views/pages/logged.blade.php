@@ -10,13 +10,13 @@
         
 
         @foreach ($projects as $project)
-            <div class="card mb-5 p-3">
+            <div class="card mb-4 p-3">
                 <a href="{{route('projectShow', $project)}}">
-                    <h2>Progetto: {{$project -> name}}</h2>
+                    <h2>Repository: {{$project -> name}}</h2>
                 </a>
-                <p>Description: {{$project -> description 
+                <p class="my-description"> {{$project -> description 
                                 ? $project -> description 
-                                : " no description "}}
+                                : ""}}
                 </p>
                 {{-- <span>Link immagine: {{ $project -> main_image}}</span> --}}
                 <img  src={{ $project -> main_image}} alt="">
