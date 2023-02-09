@@ -38,6 +38,14 @@ Route :: get('/logged/project/create', [MainController :: class, 'projectCreate'
 Route :: post('/logged/project/store', [MainController :: class, 'projectStore'])
     -> name('projectStore');
 
+// ROUTE EDIT FORM:
+Route::get('/logged/project/edit/{project}', [MainController::class, 'projectEdit'])
+    ->name('projectEdit');
+
+// ROUTE PER RICEZIONE DATI VECCHI DA FORM:
+Route :: post('/logged/project/update/{project}', [MainController :: class, 'projectUpdate'])
+    -> name('projectUpdate');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

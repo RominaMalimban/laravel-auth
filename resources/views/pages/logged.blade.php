@@ -23,6 +23,7 @@
                 <span>Repo link: {{ $project -> repo_link}}</span>
 
                 <a href="{{route('projectDelete', $project)}}">ELIMINA</a>
+                <a href="{{ route('projectEdit', $project) }}">EDIT</a>
             </div> 
         @endforeach
         

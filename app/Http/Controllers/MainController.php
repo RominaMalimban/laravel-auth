@@ -53,9 +53,37 @@ class MainController extends Controller
             ]
         );
 
-    
         $project = new Project();
     
+        $project -> name = $data['name'];
+        $project -> description = $data['description'];
+        $project -> main_image = $data['main_image'];
+        $project -> release_date = $data['release_date'];
+        $project -> repo_link = $data['repo_link'];
+
+        $project -> save();
+    
+        return redirect() -> route('home','logged');
+    }
+
+    // METODO EDIT:
+    public function projectEdit(Project $project) {
+
+        return view('pages.projectEdit', compact('project'));
+    }
+
+    // METODO PER RICEZIONE DATI VECCHI DA FORM CON VALIDAZIONE:
+    public function projectUpdate(Request $request, Project $project) {
+
+        $data = $request->validate([
+                'name' => 'required|string|max:64',
+                'description' => 'nullable|string',
+                'main_image' => 'required|string',
+                'release_date' => 'required|before:'.now(),
+                'repo_link' => 'required'
+            ]
+        );
+
         $project -> name = $data['name'];
         $project -> description = $data['description'];
         $project -> main_image = $data['main_image'];

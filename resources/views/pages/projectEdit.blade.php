@@ -5,7 +5,7 @@
     <div class="container">
 
         <h1>Create new project</h1>
-
+        
         {{-- errore --}}
         @if ($errors ->any())
         <div class="alert alert-danger">
@@ -18,24 +18,24 @@
         @endif
 
         {{-- form --}}
-        <form method="POST" action="{{ route('projectStore')}}">
+        <form method="POST" action="{{ route('projectUpdate', $project)}}">
             @csrf
             <label for="name">Enter your project name</label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{$project -> name}}">
             <br>
             <label for="description">Enter a description</label>
-            <input type="text" name="description">
+            <input type="text" name="description" value="{{$project -> description}}">
             <br>
             <label for="main_image">Enter the link of the main image</label>
-            <input type="text" name="main_image">
+            <input type="text" name="main_image" value="{{$project -> main_image}}">
             <br>
             <label for="release_date">Enter the release date</label>
-            <input type="date" name="release_date">
+            <input type="date" name="release_date" value="{{$project -> release_date }}">
             <br>
             <label for="repo_link">Enter the link of your repo</label>
-            <input type="text" name="repo_link">
+            <input type="text" name="repo_link" value="{{$project-> repo_link}}">
             <br>
-            <input type="submit" value="CREATE NEW PROJECT">
+            <input type="submit" value="UPDATE PROJECT">
         </form>
     </div>
     
