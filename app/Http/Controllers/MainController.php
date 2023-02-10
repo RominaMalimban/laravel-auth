@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
 class MainController extends Controller
 {   
     // METODO HOME PUBLIC:
@@ -47,11 +48,14 @@ class MainController extends Controller
         $data = $request->validate([
                 'name' => 'required|string|max:64|unique:projects,name',
                 'description' => 'nullable|string',
-                'main_image' => 'required|string|unique:projects,main_image',
+                'main_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|unique:projects,main_image',
                 'release_date' => 'required|before:'.now(),
                 'repo_link' => 'required|unique:projects,repo_link'
             ]
         );
+
+        $img_path = Storage::put('uploads', $data['main_image']);
+        $data['main_image'] = $img_path;
 
         $project = new Project();
     

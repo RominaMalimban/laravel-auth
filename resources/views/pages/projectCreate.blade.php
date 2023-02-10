@@ -18,7 +18,7 @@
         @endif
 
         {{-- form --}}
-        <form method="POST" action="{{ route('projectStore')}}">
+        <form method="POST" action="{{ route('projectStore')}}" enctype="multipart/form-data">
             @csrf
             <label for="name">Enter your project name</label>
             <input type="text" name="name">
@@ -26,8 +26,8 @@
             <label for="description">Enter a description</label>
             <input type="text" name="description">
             <br>
-            <label for="main_image">Enter the link of the main image</label>
-            <input type="text" name="main_image">
+            <label for="main_image">Upload the image of your repo</label>
+            <input type="file" name="main_image">
             <br>
             <label for="release_date">Enter the release date</label>
             <input type="date" name="release_date">
