@@ -4,7 +4,7 @@
     
     <div class="container">
 
-        <h1>Create new project</h1>
+        <h1>Update your project</h1>
         
         {{-- errore --}}
         @if ($errors ->any())
@@ -18,7 +18,7 @@
         @endif
 
         {{-- form --}}
-        <form method="POST" action="{{ route('projectUpdate', $project)}}">
+        <form method="POST" action="{{ route('projectUpdate', $project)}}" enctype="multipart/form-data">
             @csrf
             <label for="name">Enter your project name</label>
             <input type="text" name="name" value="{{$project -> name}}">
@@ -27,7 +27,7 @@
             <input type="text" name="description" value="{{$project -> description}}">
             <br>
             <label for="main_image">Enter the link of the main image</label>
-            <input type="text" name="main_image" value="{{$project -> main_image}}">
+            <input type="file" name="main_image" value="{{$project -> main_image}}">
             <br>
             <label for="release_date">Enter the release date</label>
             <input type="date" name="release_date" value="{{$project -> release_date }}">
