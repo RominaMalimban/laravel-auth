@@ -7,8 +7,10 @@
 body{
     color: $black;
 }
+
 a{
     text-decoration: none;
+    color: $black;
 }
 
 ul li{
@@ -131,4 +133,43 @@ nav{
         }
     }
 }
+
+// REGOLE PAGINA LOGGATA:
+.logged{
+    position: relative;
+
+    .createForm{
+        position: absolute;
+        top: -120px;
+        font-size: 35px;
+        
+        a:hover{
+            color: $black;
+            text-decoration: underline;
+        }
+    }
+    
+    .myButtons{
+        margin-top: 30px;
+    
+        a{
+            // background-color: $black;
+            display: inline-block;
+            border: 3px solid $black;
+            color: $black;
+            border-radius: 20px;
+            padding: 5px 20px;
+    
+            &:hover{
+                border: 3px solid #DBA39A;
+                color: #DBA39A;
+            }
+        }
+    
+        .myEdit{
+            margin-left: 10px;
+        }
+    }
+}
+
 
