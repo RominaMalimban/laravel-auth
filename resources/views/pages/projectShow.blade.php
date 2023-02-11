@@ -12,6 +12,7 @@
             <div class="myCard">
                 
                 <img src="{{ $project -> main_image}}" alt="">
+                <img src="{{ asset('storage/' . $project -> main_image) }}" alt="">
               
                 <div class="myText">
                     <p>{{$project -> description 
