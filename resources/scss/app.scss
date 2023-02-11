@@ -153,7 +153,6 @@ nav{
         margin-top: 30px;
     
         a{
-            // background-color: $black;
             display: inline-block;
             border: 3px solid $black;
             color: $black;
@@ -172,4 +171,39 @@ nav{
     }
 }
 
+// REGOLE FORM:
+.myFormTitle{
+    font-size: 60px;
+    color: $black;
+    margin-bottom: 30px;
+}
 
+form{
+    width: 60%;
+    border-radius: 15px;
+    background-color: #FEFCF3;
+    padding: 50px 40px;
+
+    .form-group{
+        margin-bottom: 15px;
+
+        label{
+            margin-bottom: 5px;
+        }
+    }
+
+    .mySubBtn{
+        display: block;
+        margin-top: 30px;
+        background-color: #FEFCF3;
+        border: 3px solid $black;
+        color: $black;
+        border-radius: 20px;
+        padding: 5px 20px;
+
+        &:hover{
+            border: 3px solid #DBA39A;
+            color: #DBA39A;
+        }
+    }
+}
