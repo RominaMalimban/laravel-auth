@@ -4,6 +4,9 @@
 @import 'partials/variables';
 
 // REGOLE GENERALI:
+body{
+    color: $black;
+}
 a{
     text-decoration: none;
 }
@@ -30,11 +33,15 @@ nav{
     }
 }
 
-// REGOLE HOME:
 .myWave{
-    margin-top: -90px;
+    margin-top: -95px;
 }
 
+.btmWave{
+    margin-top: -50px;
+}
+
+// REGOLE HOME:
 .myMainTitle{
     margin-top: 35px;
     font-size: 60px;
@@ -62,16 +69,13 @@ nav{
             position: relative;
             min-height: 400px;
 
-            a{
-                color: $pink;
-            }
-
             img{
                 width: 90%;
                 height: 250px;
                 object-fit: cover;
                 position: absolute;
                 top: -100px;
+                border-radius: 10px;
             }
 
             .mytext{
@@ -91,23 +95,40 @@ nav{
                     padding-inline: 10px;
                 }
 
-                .repoLink{
-                    margin-top: 15px;
+            }
+        }
+    } 
+}
 
-                    a{
-                        color: $black;
-                        
-                        &:hover{
-                            text-decoration:underline;
-                        }
-                    }
-                }
+.repoLink{
+    margin-top: 15px;
+
+    a{
+        color: $black;
+        
+        &:hover{
+            text-decoration:underline;
+        }
+    }
+}
+
+// REGOLE SHOW:
+.show{
+    background-color: $pink;
+
+    .myCard{
+        @include flex ($type: 'flex');
+        padding: 20px;
+
+        .myText{
+            width: 40%;
+            align-self: center;
+            padding-left: 40px;
+
+            p{
+                line-height: 30px;
             }
         }
     }
-   
-
-    
 }
-
 
