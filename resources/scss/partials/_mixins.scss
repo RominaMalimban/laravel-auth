@@ -1,0 +1,33 @@
+// REGOLE FLEX: 
+
+@mixin flex ($type) {
+    display: flex;
+
+    @if $type =='flex' {}
+
+    @if $type =='between' {
+        justify-content: space-between;
+    }
+
+    @else if $type =='center' {
+        align-items: center;
+    }
+
+    @else if $type =='both' {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @else if $type =='column' {
+        flex-direction: column;
+    }
+
+    @else if $type =='col-center' {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @else if $type =='wrap' {
+        flex-wrap: wrap;
+    }
+}

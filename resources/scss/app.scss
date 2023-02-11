@@ -1,62 +1,113 @@
 @import '~bootstrap/scss/bootstrap';
 @import "@fortawesome/fontawesome-free/css/all.css";
+@import 'partials/mixins';
+@import 'partials/variables';
 
-body{
-    // debug
-    background-color: #0a0c10;
-    background-size: contain;
-    color: #fff;
+// REGOLE GENERALI:
+a{
+    text-decoration: none;
 }
 
-// REGOLE HEADER:
+ul li{
+    list-style: none;
+}
+
+// REGOLE NAVBAR:
 nav{
-    background-color: #272b33;
+    background-color: $black;
     height: 70px;
 
     a{
-        color: #fff;
-    }
-}
+        color: $pink;
 
-.ms-home{
-    h2{
-        color: #e13032;
-    }
-
-    .my-cards{
-        display: flex;
-        flex-wrap: wrap;
-        margin-inline: -20px;
-
-        .card{
-            background-color: #272b33e1;
-            border: 1px solid #fff;
-            width: calc(100% / 2 - 40px);
-            margin-inline: 20px;
-
-            .my-description{
-                font-style: italic;
-                padding-inline: 15px;
-            }
-        }
-
-        p, span{
+        &:hover{
             color: #fff;
         }
     }
 
+    .myProfile{
+        padding-left: 20px;
+    }
+}
+
+// REGOLE HOME:
+.myWave{
+    margin-top: -90px;
+}
+
+.myMainTitle{
+    margin-top: 35px;
+    font-size: 60px;
+    color: $black;
+}
+
+.ms-home{
+    background-color: $pink;
+
+    .container{
+
+        .myCards{
+            @include flex ($type: 'wrap');
+            margin-inline: -20px;
+        }
+
+        // REGOLE CARDS:
+        .card{
+            width: calc(100% / 3 - 40px);
+            margin: 70px 20px;
+            padding: 20px;
+            background-color: #FEFCF3;
+            box-shadow:0px 20px 10px 0px #b7bec2;
+            color: $black;
+            position: relative;
+            min-height: 400px;
+
+            a{
+                color: $pink;
+            }
+
+            img{
+                width: 90%;
+                height: 250px;
+                object-fit: cover;
+                position: absolute;
+                top: -100px;
+            }
+
+            .mytext{
+                margin-top: 150px;
+
+                h3{
+                    font-weight: bold;
+                    color: $black;
+
+                    &:hover{
+                        text-decoration:underline;
+                    }
+                }
+
+                p{
+                    font-style: italic;
+                    padding-inline: 10px;
+                }
+
+                .repoLink{
+                    margin-top: 15px;
+
+                    a{
+                        color: $black;
+                        
+                        &:hover{
+                            text-decoration:underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+   
+
     
 }
-span{
-    display: block;
-}
 
-a{
-    text-decoration: none;
-    color: black;
-}
 
-img{
-    width: 150px;
-    height: 100px;
-}
